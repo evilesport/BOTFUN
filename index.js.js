@@ -141,4 +141,4 @@ fs.readdir('./commands/', async (err, files) => {
     });
   });
 
-client.login(process.env.TOKEN);
+  client.login(token);
