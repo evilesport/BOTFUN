@@ -1,13 +1,14 @@
 const { RichEmbed } = require('discord.js');
-const { prefix } = require('../config');
+//const { prefix } = require('../config');
+const prefix = process.env.prefix
 
 exports.run = async (client, message, args) => {
 
     await message.delete().catch(O_o=>{});
 
-    const a = message.guild.roles.get('485987998794514442'); // Moderator
-    const b = message.guild.roles.get('485987998165499914'); // Administrator
-    const c = message.guild.roles.get('482192667766423561'); // Developer
+    const a = message.guild.roles.get('542053394060279810'); // Moderator
+    const b = message.guild.roles.get('542053413932761119'); // Administrator
+    const c = message.guild.roles.get('542053430227632130'); // Developer
 
     const filter = (reaction, user) => ['🇦', '🇧', '🇨'].includes(reaction.emoji.name) && user.id === message.author.id;
 
@@ -18,7 +19,6 @@ exports.run = async (client, message, args) => {
         🇦 ${a.toString()}
         🇧 ${b.toString()}
         🇨 ${c.toString()}
-
         `)
         .setColor(0xdd9323)
         .setFooter(`ID: ${message.author.id}`);

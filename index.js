@@ -66,11 +66,11 @@ fs.readdir('./commands/', async (err, files) => {
     });
   });
 
-  fs.readdir('./commands/Moderation-commands/', async (err, files) => {
+  fs.readdir('./commands/mod-commands/', async (err, files) => {
     if (err) return console.error;
     files.forEach(file => {
       if (!file.endsWith('.js')) return;
-      let props = require(`./commands/Moderation-commands/${file}`);
+      let props = require(`./commands/mod-commands/${file}`);
       let cmdName = file.split('.')[0];
       console.log(`Loaded command '${cmdName}'`);
       client.commands.set(cmdName, props);

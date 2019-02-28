@@ -1,5 +1,6 @@
 const countGame = new Set();
-const { prefix } = require('../config');
+//const { prefix } = require('');
+const prefix = process.env.prefix
 
 exports.run = async (client, message, args) => {
 
